@@ -49,7 +49,7 @@
         "body": [
             "${1:ComponentName}.attributes = []",
         ],
-        "description": "Create a Component with createRaw"
+        "description": "Create Component Attributes"
     },
     "Create Default Props": {
         "prefix": "bioprops",
@@ -58,7 +58,7 @@
             "\t${1:props}: 'My default props',",
             "};"
         ],
-        "description": "Create a Component with createRaw"
+        "description": "Default Props"
     },
     "Create Bio State": {
         "prefix": "biostate",
@@ -67,7 +67,7 @@
             "\t${1:state}: '',",
             "});"
         ],
-        "description": "Create a Component with createRaw"
+        "description": "setState"
     },
     "Attribute Changed Callback": {
         "prefix": "bioacc",

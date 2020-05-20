@@ -1,65 +1,140 @@
-# biotope-snippets README
+# biotope-snippets
 
-This is the README for your extension "biotope-snippets". After writing up a brief description, we recommend including the following sections.
+This is a simple Biotope Snippets VS Code Extension, this is an unrelased package that will be published soon.
+
+### To start using this extension with Visual Studio Code copy it into the `<user home>/.vscode/extensions` folder and restart Code.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+| Snippet       | Renders                             |
+| ------------- |:-----------------------------------:|
+| `bioel`       | Import Biotope/ Component           |
+| `biop`        | Partial                             |
+| `bioraw`      | Create Component with createRaw     |
+| `bioattr`     | Attributes                          |
+| `bioprops`    | Default props                       |
+| `biostate`    | Define setState                     |
+| `bioacc`      | Create attributeChangedCallback hook|
+| `biocc`       | Create connectedCallback hook       |
+| `bioren`      | Create rendered hook                |
+| `biorea`      | Create ready hook                   |
+| `biodcb`      | Create disconnectedCallback hook    |
+| `bioatc`      | Create Attribute with converter     |
+| `bioref`      | Create createRef hook               |
 
-For example if there is an image subfolder under your extension project workspace:
+## Full Expansion
 
-\!\[feature X\]\(images/feature-x.png\)
+### bioel - Import Biotope/ Component   
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+```javascript
+import Component from '@biotope/element';
 
-## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+export class ComponentName extends Component {
+    render() {
+        return this.html`
 
-## Extension Settings
+        `;
+    }
+}
+ComponentName.componentName = 'custom-component';
+ComponentName.register();
+```
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+### biop - Partial
+```javascript
+const partial = () => this.html`
 
-For example:
+`; 
+```
 
-This extension contributes the following settings:
+### bioraw - Create Component with createRaw
+```javascript
+import Component, { createRaw } from '@biotope/element';
 
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
 
-## Known Issues
+export class ComponentName extends Component {
+    render() {
+        return this.html`
+            this.createRaw()
+        `;
+    }
+}
+ComponentName.componentName = 'custom-component';
+ComponentName.register();
+```
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+### bioattr - Attributes 
+```javascript
+ComponentName.attributes = []
+```
 
-## Release Notes
+### bioprops - Default props 
+```javascript
+this.defaultProps = {
+    props: 'My default props',
+};
+```
 
-Users appreciate release notes as you update your extension.
+### biostate -  Define setState  
+```javascript
+this.setState({
+    state: '',
+});
+```
 
-### 1.0.0
+### bioacc -  Create attributeChangedCallback hook 
+```javascript
+attributeChangedCallback(name, previous, current) {
 
-Initial release of ...
+};
+```
 
-### 1.0.1
+### biocc -  Create connectedCallback hook
+```javascript
+connectedCallback() {
 
-Fixed issue #.
+};
+```
 
-### 1.1.0
+### biren -  Create rendered hook
+```javascript
+rendered() {
 
-Added features X, Y, and Z.
+};
+```
 
------------------------------------------------------------------------------------------------------------
+### birea -  Create ready hook
+```javascript
+ready() {
 
-## Working with Markdown
+};
+```
 
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
+### biodcb -  Create disconnectedCallback hook
+```javascript
+disconnectedCallback() {
 
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
+};
+```
 
-### For more information
+### bioatc -  Create Attribute with converter
+```javascript
+import Component, { toBoolean } from '@biotope/element';
 
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+ComponentName.attributes = [
+    Attribute,
+    {
+        name: name,
+        converter: (prop) => {
+            return toBoolean(prop);
+        },
+    },
+];
+```
+### bioref -  Create createRef hook
+```javascript
+this.refs = {
+    ref: createRef(),
+};
+```
