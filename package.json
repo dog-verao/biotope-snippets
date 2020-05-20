@@ -1,0 +1,26 @@
+{
+    "name": "biotope-snippets",
+    "displayName": "Biotope-snippets",
+    "description": "Simple Biotope Snippets",
+    "version": "1.0.0",
+    "publisher": "dog-verao",
+    "icon": "https://avatars1.githubusercontent.com/u/34653144?s=200&v=4",
+    "engines": {
+        "vscode": "^1.45.0"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "javascript",
+                "path": "./snippets/snippets.code-snippets"
+            },
+            {
+                "language": "javascriptreact",
+                "path": "./snippets/snippets.code-snippets"
+            }
+        ]
+    }
+}

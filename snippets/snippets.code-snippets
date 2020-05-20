@@ -1,0 +1,143 @@
+{
+    "Import Bio-element": {
+        "prefix": "bioel",
+        "body": [
+            "import Component from '@biotope/element';",
+            "$0",
+            "$0",
+            "export class ${1:ComponentName} extends Component {",
+            "\trender() {",
+            "\t\treturn this.html`",
+            "$0",
+            "\t\t`;",
+            "\t}",
+            "}",
+            "${1:ComponentName}.componentName = '${2:custom-component}';",
+            "${1:ComponentName}.register();",
+        ],
+        "description": "Import Component and create new Bio-Element"
+    },
+    "Create Partial": {
+        "prefix": "biop",
+        "body": [
+            "const ${1:partial} = () => this.html`",
+            "$0",
+            "`;",
+        ],
+        "description": "Create a partial"
+    },
+    "Create Component with createRaw": {
+        "prefix": "bioraw",
+        "body": [
+            "import Component, { createRaw } from '@biotope/element';",
+            "$0",
+            "$0",
+            "export class ${1:ComponentName} extends Component {",
+            "\trender() {",
+            "\t\treturn this.html`",
+            "\t\t\tthis.createRaw()",
+            "\t\t`;",
+            "\t}",
+            "}",
+            "${1:ComponentName}.componentName = '${2:custom-component}';",
+            "${1:ComponentName}.register();",
+        ],
+        "description": "Create a Component with createRaw"
+    },
+    "Create Component Attributes": {
+        "prefix": "bioattr",
+        "body": [
+            "${1:ComponentName}.attributes = []",
+        ],
+        "description": "Create a Component with createRaw"
+    },
+    "Create Default Props": {
+        "prefix": "bioprops",
+        "body": [
+            "this.defaultProps = {",
+            "\t${1:props}: 'My default props',",
+            "};"
+        ],
+        "description": "Create a Component with createRaw"
+    },
+    "Create Bio State": {
+        "prefix": "biostate",
+        "body": [
+            "this.setState({",
+            "\t${1:state}: '',",
+            "});"
+        ],
+        "description": "Create a Component with createRaw"
+    },
+    "Attribute Changed Callback": {
+        "prefix": "bioacc",
+        "body": [
+            "attributeChangedCallback(${1:name}, ${2:previous}, ${3:current}) {",
+            "$0",
+            "};"
+        ],
+        "description": "This hook is called when an attribute has changed on the component. It can trigger a new render if it determines that the props need to be changed. If they don't, no new render will be triggered."
+    },
+    "Connected Callback": {
+        "prefix": "biocc",
+        "body": [
+            "connectedCallback() {",
+            "$0",
+            "};"
+        ],
+        "description": "This hook gets called once the component is already attached to the DOM. If the component is removed from the DOM and re-attached to it, then this function gets called again."
+    },
+    "Rendered": {
+        "prefix": "bioren",
+        "body": [
+            "rendered() {",
+            "$0",
+            "};"
+        ],
+        "description": "This hook gets called once the component is already attached to the DOM. If the component is removed from the DOM and re-attached to it, then this function gets called again."
+    },
+    "Ready": {
+        "prefix": "biorea",
+        "body": [
+            "ready() {",
+            "$0",
+            "};"
+        ],
+        "description": "This hook will only be called once when the first rendered hook got fired. This hook is for the purpose of making sure the component has been registered, rendered and is available for your usage. It emits a non-bubbling ready event with no detail."
+    },
+    "Disconnected Callback": {
+        "prefix": "biodcb",
+        "body": [
+            "disconnectedCallback() {",
+            "$0",
+            "};"
+        ],
+        "description": "The counterpart of the connectedCallback hook. This hook gets called whenever a component leaves the DOM. Just like connectedCallback, this hook will be called again if the component gets attached and again detached from the DOM."
+    },
+    "Attribute with Converter ": {
+        "prefix": "bioatc",
+        "body": [
+            "import Component, { toBoolean } from '@biotope/element';",
+            "$0",
+            "${1:ComponentName}.attributes = [",
+            "\t${2:Attribute},",
+            "\t{",
+            "\t\tname: ${3:name},",
+            "\t\tconverter: (prop) => {",
+            "\t\t\treturn toBoolean(prop);",
+            "\t\t},",
+            "\t},",
+            "];"
+        ],
+        "description": "If your type is just too specific for it to be converted automatically (like an enum value that only accepts certain strings or number), then you can use the converter property we provide and set up your own conversion function."
+    },
+    "CreateRef": {
+        "prefix": "bioref",
+        "body": [
+            "this.refs = {",
+            "\t${3:ref}: createRef(),",
+            "};"
+        ],
+        "description": "This is a helper function that creates simple reference objects for you so that you don't need to manually do this yourself."
+    },
+}
