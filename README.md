@@ -2,7 +2,7 @@
 
 This is a simple Biotope Snippets VS Code Extension, this is an unrelased package that will be published soon.
 
-### To start using this extension with Visual Studio Code copy it into the `<user home>/.vscode/extensions` folder and restart Code.
+To start using this extension with Visual Studio Code copy it into the `<user home>/.vscode/extensions` folder and restart Code.
 
 ## Features
 
